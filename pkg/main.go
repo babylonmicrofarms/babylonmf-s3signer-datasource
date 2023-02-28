@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
+	"github.com/babylonmicrofarms/babylonmf-s3signer-datasource/pkg/plugin"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/datasource"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/log"
-	"github.com/babylonmf/s3signer/pkg/plugin"
 )
 
 func main() {
