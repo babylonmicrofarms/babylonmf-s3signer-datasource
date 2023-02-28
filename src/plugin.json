@@ -9,9 +9,11 @@
   "info": {
     "description": "Creates presigned requests for getting aws s3 objects",
     "author": {
-      "name": "Babylonmf"
+      "name": "babylonmicrofarms"
     },
-    "keywords": ["datasource"],
+    "keywords": [
+      "datasource"
+    ],
     "logos": {
       "small": "img/logo.svg",
       "large": "img/logo.svg"

@@ -1,12 +1,27 @@
-# Grafana data source plugin template
+# babylonmf-s3signer-datasource 
 
-This template is a starting point for building a Data Source Plugin for Grafana.
+This was built from the `npx @grafana/create-plugin` tool. It is a grafana backend data source that creates pre-signed urls for getting aws s3 objects 
+
+## Data source usage
+
+### config
+you need to pass the following when configuring the data source
+
+- bucket: the s3 bucket that you want to sign objects from
+- aws_access_key_id: part of your aws credentials to sign the request
+- aws_secret_access_key: the more secret part of the aws credentials
+
+NOTE: Even though this plugin is using your aws credentials it does not communicate with AWS to ensure that your credentials are correct or that they have access to the bucket you are trying to use. Double check those things if something isn't working.
+### query
+
+there is one field in the data source query (`Image Keys`) that expects a comma seperated string of s3 object keys. it will return a table with signed urls for getting those keys
+
 
 ## What are Grafana data source plugins?
 
 Grafana supports a wide range of data sources, including Prometheus, MySQL, and even Datadog. There’s a good chance you can already visualize metrics from the systems you have set up. In some cases, though, you already have an in-house metrics solution that you’d like to add to your Grafana dashboards. Grafana Data Source Plugins enables integrating such solutions with Grafana.
 
-## Getting started
+## Getting started with development
 
 ### Backend
 
