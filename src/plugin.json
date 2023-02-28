@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "S3signer",
+  "id": "babylonmf-s3signer-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_s3signer",
+  "info": {
+    "description": "Creates presigned requests for getting aws s3 objects",
+    "author": {
+      "name": "Babylonmf"
+    },
+    "keywords": ["datasource"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": "^9.2.5",
+    "plugins": []
+  }
+}
