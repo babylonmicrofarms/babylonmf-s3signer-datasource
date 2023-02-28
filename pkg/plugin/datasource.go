@@ -39,12 +39,13 @@ func NewDatasource(dataSourceSettings backend.DataSourceInstanceSettings) (insta
 	}
 	log.DefaultLogger.Debug("parsed json data", settings)
 	bucket := settings["bucket"]
+	region := settings["region"]
 	id := dataSourceSettings.DecryptedSecureJSONData["aws_access_key_id"]
 	secretKey := dataSourceSettings.DecryptedSecureJSONData["aws_secret_access_key"]
 
 	cfg, err := config.LoadDefaultConfig(
 		context.TODO(),
-		config.WithRegion("us-east-1"),
+		config.WithRegion(region),
 		config.WithCredentialsProvider(
 			credentials.NewStaticCredentialsProvider(id, secretKey, ""),
 		),

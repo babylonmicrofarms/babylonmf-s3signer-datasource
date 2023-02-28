@@ -15,6 +15,14 @@ export function ConfigEditor(props: Props) {
     onOptionsChange({ ...options, jsonData });
   };
 
+  const onRegionChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const jsonData = {
+      ...options.jsonData,
+      region: event.target.value,
+    };
+    onOptionsChange({ ...options, jsonData });
+  };
+
   // Secure field (only sent to the backend)
    const onKeyIdChange = (event: ChangeEvent<HTMLInputElement>) => {
     onOptionsChange({
@@ -75,6 +83,14 @@ export function ConfigEditor(props: Props) {
           onChange={onBucketChange}
           value={jsonData.bucket || ''}
           placeholder="s3 bucket that you want to sign objects from"
+          width={40}
+        />
+      </InlineField>
+      <InlineField label="region" labelWidth={12}>
+        <Input
+          onChange={onRegionChange}
+          value={jsonData.region || ''}
+          placeholder="s3 region that your bucket is in"
           width={40}
         />
       </InlineField>

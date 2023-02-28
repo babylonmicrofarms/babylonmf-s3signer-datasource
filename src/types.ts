@@ -13,6 +13,7 @@ export const DEFAULT_QUERY: Partial<MyQuery> = {
  */
 export interface MyDataSourceOptions extends DataSourceJsonData {
   bucket?: string;
+  region?: string;
 }
 
 /**
